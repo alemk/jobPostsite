@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en" xmlns:th="www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8"/>
+            <title>Job Post</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        </head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Add Job Post</h1>
+    <div class="col-md-6 col-md-offset-3">
+
+        <form th:action="@{/addJobPost}"  th:object="${jobPost}" th:method="POST" class="form-group">
+            <input type="hidden" th:field="*{id}" />
+
+            <label for="title">Job Role:</label>
+            <input type="text" th:field="*{jobRole}" id="title"  clas="form-control"/>
+            <span th:if="${#fields.hasErrors('jobRole')}" th:errors="*{jobRole}"></span> <br/>
+
+
+            <label for="com">Company:</label>
+            <input type="text" id="com"  th:field="*{companyName}" class="form-control"/><br/>
+            <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
+
+            <br/> <label for="start">Location:</label>
+            <input type="text" id="start"  th:field="*{JobLocation}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('JobLocation')}" th:errors="*{JobLocation}"></span> <br/>
+
+
+            <br/> <label for="end">Reqirement: </label>
+            <input type="text" id="end"  th:field="*{jobRequirment}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('jobRequirment')}" th:errors="*{jobRequirment}"></span><br/>
+
+            <label for="du">Skills :</label>
+            <textarea type="textarea" rows="4" cols="50" th:field="*{jobSkill}" id="du" class="form-control" ></textarea>
+            <span th:if="${#fields.hasErrors('jobSkill')}" th:errors="*{jobSkill}"></span> <br/>
+
+
+            <input type="submit" value="Save"  class="btn btn-primary"/>
+
+        </form>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
